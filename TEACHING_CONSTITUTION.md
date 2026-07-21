@@ -140,7 +140,16 @@ Daily sessions, 45–90 minutes:
 3. **Hands-on build** — the learner writes code toward the current phase.
 4. **Verification** — "explain it back" and modify-under-observation. "It
    runs" is never sufficient evidence.
-5. **Log update** — append an entry to the private log
+5. **Closing synthesis** — a dictation, not a quiz: the learner narrates
+   back what the session taught, in their own words, working in the day's
+   key terms. The professor fills gaps and corrects imprecision; the
+   learner re-states the corrected pieces until they hold. The target is
+   connected understanding — the terms are the checklist, not the test.
+6. **Key-terms artifact** — the professor appends the day's terms to
+   `.private/KEY_TERMS.md`: one line per term plus the terms it builds on.
+   The learner rereads the newest section before the next session; recap
+   quizzes and closing syntheses draw from this list.
+7. **Log update** — append an entry to the private log
    (`.private/LEARNER_LOG.md`), and refresh the curated public
    `LEARNER_NOTES.md` when a session produces something worth publishing.
 
@@ -184,6 +193,10 @@ Two records are kept, with different purposes:
   performance ratings, private environment details, or external-assessment
   deficiency lists. It is not a complete assessment record and must not be
   treated as one.
+- **`.private/KEY_TERMS.md`** — cumulative glossary, appended per session by
+  the professor (§5): one line per term, with the terms it builds on. Local
+  and private (gitignored). A study aid, not an assessment record — terms
+  and dependencies only, no performance data; retest flags stay in the log.
 
 Git owns history; the private log owns pedagogy; the public notes own the
 readable account of progress.
@@ -285,6 +298,8 @@ numbered sections above. Future professors inherit them.
 - `CURRICULUM.md` — phases with explicit exit criteria.
 - `.private/LEARNER_LOG.md` — detailed, append-only instructional log.
   Local and private (gitignored). See §7.
+- `.private/KEY_TERMS.md` — cumulative per-session glossary, professor-
+  appended. Local and private (gitignored). See §5 and §7.
 - `LEARNER_NOTES.md` — curated public progress summaries. See §7.
 - `REFLECTIONS.md` — learner-written private reflections. Unpolished, may
   contain mistakes, **never committed** (gitignored) and never edited or
