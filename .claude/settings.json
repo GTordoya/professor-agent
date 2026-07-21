@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(**/*.py)",
+      "Write(**/*.py)",
+      "Edit(**/pyproject.toml)",
+      "Write(**/pyproject.toml)",
+      "Read(**/.env*)",
+      "Edit(**/.env*)",
+      "Write(**/.env*)"
+    ],
+    "allow": [
+      "Edit(**/*.md)",
+      "Write(**/*.md)"
+    ]
+  }
+}

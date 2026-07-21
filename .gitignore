@@ -1,0 +1,20 @@
+# SECRETS — never commit or publish
+*.env
+.env.*
+.claude/settings.local.json
+
+# Harness runtime artifacts
+.claude/scheduled_tasks.lock
+
+# Private learning records — detailed log and personal reflections stay local
+.private/
+REFLECTIONS.md
+
+# Python / tooling
+.venv/
+__pycache__/
+
+# macOS
+.DS_Store
+
+# end
