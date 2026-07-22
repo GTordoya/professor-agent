@@ -1,0 +1,38 @@
+# Use this repository's professor-specific least-privilege profile.
+default_permissions = "professor"
+
+[permissions.professor.filesystem]
+# Let ordinary tools and runtimes read the minimum operating-system files they need.
+":minimal" = "read"
+
+# Permit temporary working files without widening access elsewhere.
+":tmpdir" = "write"
+":slash_tmp" = "write"
+
+# macOS supports these workspace-relative glob rules directly.
+glob_scan_max_depth = 4
+
+[permissions.professor.filesystem.":workspace_roots"]
+# The professor may inspect the repository but cannot change it by default.
+"." = "read"
+
+# Teaching documents are professor-maintained under the constitution.
+"**/*.md" = "write"
+
+# Deny arbitrary private material, then reopen only the professor-managed records.
+".private" = "deny"
+".private/LEARNER_LOG.md" = "write"
+".private/KEY_TERMS.md" = "write"
+
+# Learner reflections are learner-only: the professor may neither read nor write them.
+"REFLECTIONS.md" = "deny"
+
+# Secrets are unavailable even though the surrounding repository is readable.
+".env" = "deny"
+".env.*" = "deny"
+"**/.env" = "deny"
+"**/.env.*" = "deny"
+
+# Implementation is reviewable but never professor-writable during the current stage.
+"**/*.py" = "read"
+"pyproject.toml" = "read"
